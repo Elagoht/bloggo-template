@@ -13,11 +13,10 @@ section hgroup a {
   font-weight: 500;
   padding: 0.5rem 0.5rem 0.25rem 1rem;
   border-radius: 0.25rem;
-  filter: hue-rotate(-90deg);
-  background-color: var(--gopher-500);
-  color: var(--gopher-100);
+  background-color: #649d78;
+  color: #e0f0e0;
 }
 
 section hgroup a:hover {
-  background-color: var(--gopher-600);
+  background-color: #4d7a57;
 }
