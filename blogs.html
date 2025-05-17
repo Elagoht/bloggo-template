@@ -17,8 +17,7 @@
     <link rel="stylesheet" href="design/blogs.css" />
     <!-- Components -->
     <script src="components/icons.js" type="module"></script>
-    <script src="components/blog-row.js" type="module"></script>
-    <script src="components/blog-table.js" type="module"></script>
+    <script src="components/blog-list.js" type="module"></script>
     <!-- Behaviour -->
     <script src="behaviour/aside.js" defer></script>
   </head>
@@ -67,12 +66,16 @@
 
     <main>
       <section>
-        <h2>Blogs</h2>
+        <hgroup>
+          <h2>Blogs</h2>
 
-        <blog-table
+          <a href="/blogs/new">New Blog <icon-add></icon-add></a>
+        </hgroup>
+
+        <blog-list
           data='[
           {
-            "title": "How I Know You Read This",
+            "title": "How I Know You Read This, This is a too long title to fit in the column",
             "slug": "how-i-know-you-read-this",
             "image": "https://fastly.picsum.photos/id/779/320/180.jpg?hmac=Rgiqta9nL90xkpeLeK-Mwd0R45YjWCHqBviRd1Q2v2Q",
             "publishedAt": "2024-05-17",
@@ -106,7 +109,7 @@
             "status": "Draft"
           }
         ]'
-        ></blog-table>
+        ></blog-list>
       </section>
 
       <footer>

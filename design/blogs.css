@@ -1,0 +1,23 @@
+section hgroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+section hgroup a {
+  display: flex;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  padding: 0.5rem 0.5rem 0.25rem 1rem;
+  border-radius: 0.25rem;
+  filter: hue-rotate(-90deg);
+  background-color: var(--gopher-500);
+  color: var(--gopher-100);
+}
+
+section hgroup a:hover {
+  background-color: var(--gopher-600);
+}
