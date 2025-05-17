@@ -88,6 +88,13 @@ class PieChart extends HTMLElement {
           gap: 0.15rem;
           margin-top: 0.5rem;
         }
+        path {
+          transform-origin: center;
+          transition: transform 0.2s ease;
+        }
+        path:hover {
+          transform: scale(1.1);
+        }
         .legend-item {
           display: flex;
           align-items: center;
