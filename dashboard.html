@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bloggo - Your Own Blog Manager</title>
+    <title>Dashboard - Bloggo</title>
     <link rel="stylesheet" href="design/global.css" />
     <link rel="icon" href="assets/favicon.ico" />
     <link
@@ -14,7 +14,6 @@
     <!-- Specific Styles -->
     <link rel="stylesheet" href="design/panel.css" />
     <link rel="stylesheet" href="design/dashboard.css" />
-    <link rel="stylesheet" href="design/form.css" />
     <!-- Components -->
     <script src="components/icons.js" type="module"></script>
     <script src="components/counter-chart.js" type="module"></script>
@@ -55,11 +54,15 @@
 
     <aside>
       <nav>
-        <a href="#" id="active"><icon-dashboard></icon-dashboard> Dashboard</a>
-        <a href="#"><icon-blog></icon-blog> Blogs</a>
-        <a href="#"><icon-category></icon-category> Categories</a>
-        <a href="#"><icon-api></icon-api> API Model</a>
-        <a href="#"><icon-webhook></icon-webhook> Webhooks</a>
+        <a href="/dashboard.html" id="active"
+          ><icon-dashboard></icon-dashboard> Dashboard</a
+        >
+        <a href="/blogs.html"><icon-blog></icon-blog> Blogs</a>
+        <a href="/categories.html"
+          ><icon-category></icon-category> Categories</a
+        >
+        <a href="/api.html"><icon-api></icon-api> API Model</a>
+        <a href="/webhooks.html"><icon-webhook></icon-webhook> Webhooks</a>
       </nav>
     </aside>
 

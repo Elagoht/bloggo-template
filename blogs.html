@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bloggo - Your Own Blog Manager</title>
+    <title>Blogs - Bloggo</title>
     <link rel="stylesheet" href="design/global.css" />
     <link rel="icon" href="assets/favicon.ico" />
     <link
@@ -14,8 +14,11 @@
     <!-- Specific Styles -->
     <link rel="stylesheet" href="design/panel.css" />
     <link rel="stylesheet" href="design/form.css" />
+    <link rel="stylesheet" href="design/blogs.css" />
     <!-- Components -->
-    <script src="components/icons.js"></script>
+    <script src="components/icons.js" type="module"></script>
+    <script src="components/blog-row.js" type="module"></script>
+    <script src="components/blog-table.js" type="module"></script>
     <!-- Behaviour -->
     <script src="behaviour/aside.js" defer></script>
   </head>
@@ -63,6 +66,49 @@
     </aside>
 
     <main>
+      <section>
+        <h2>Blogs</h2>
+
+        <blog-table
+          data='[
+          {
+            "title": "How I Know You Read This",
+            "slug": "how-i-know-you-read-this",
+            "image": "https://fastly.picsum.photos/id/779/320/180.jpg?hmac=Rgiqta9nL90xkpeLeK-Mwd0R45YjWCHqBviRd1Q2v2Q",
+            "publishedAt": "2024-05-17",
+            "createdAt": "2024-05-17",
+            "readTime": 12,
+            "views": 1253,
+            "category": "Backend",
+            "published": true,
+            "status": "Published"
+          },
+          {
+            "title": "Why I Hate Tailwind CSS",
+            "slug": "why-i-hate-tailwind-css",
+            "image":"https://fastly.picsum.photos/id/779/320/180.jpg?hmac=Rgiqta9nL90xkpeLeK-Mwd0R45YjWCHqBviRd1Q2v2Q",
+            "createdAt": "2024-05-16",
+            "readTime": "13",
+            "views": "1243",
+            "category": "Frontend",
+            "published": false,
+            "status": "Draft"
+          },
+          {
+            "title": "I don&apos;t like React.js",
+            "slug": "i-dont-like-react-js",
+            "image": "https://fastly.picsum.photos/id/779/320/180.jpg?hmac=Rgiqta9nL90xkpeLeK-Mwd0R45YjWCHqBviRd1Q2v2Q",
+            "createdAt": "2024-05-15",
+            "readTime": "10",
+            "views": "1123",
+            "category": "Frontend",
+            "published": false,
+            "status": "Draft"
+          }
+        ]'
+        ></blog-table>
+      </section>
+
       <footer>
         <p>
           Made with <a href="https://wikipedia.org/wiki/love">🩷</a> and
