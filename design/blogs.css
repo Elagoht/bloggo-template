@@ -1,22 +1,37 @@
-section hgroup {
+section {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-section hgroup a {
-  display: flex;
-  gap: 0.5rem;
-  text-decoration: none;
-  color: inherit;
-  font-weight: 500;
-  padding: 0.5rem 0.5rem 0.25rem 1rem;
-  border-radius: 0.25rem;
-  background-color: #649d78;
-  color: #e0f0e0;
+#blog-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1rem;
 }
 
-section hgroup a:hover {
-  background-color: #4d7a57;
+#container {
+  display: grid;
+  grid-template-columns: 1fr 16rem;
+  gap: 1rem;
+  align-items: start;
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+#container > section:has(form) {
+  position: sticky;
+  top: 0rem;
+}
+
+@media (max-width: 1024px) {
+  #container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #container > section:has(form) {
+    position: unset;
+  }
 }

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="design/blogs.css" />
     <!-- Components -->
     <script src="components/icons.js" type="module"></script>
-    <script src="components/blog-list.js" type="module"></script>
+    <script src="components/blog-card.js" type="module"></script>
     <!-- Behaviour -->
     <script src="behaviour/aside.js" defer></script>
   </head>
@@ -65,52 +65,153 @@
     </aside>
 
     <main>
-      <section>
-        <hgroup>
-          <h2>Blogs</h2>
+      <div id="container">
+        <section>
+          <h3>Blogs</h3>
 
-          <a href="/blogs/new">New Blog <icon-add></icon-add></a>
-        </hgroup>
+          <div id="blog-card-list">
+            <blog-card
+              title="Understanding HTTP 304, ETag, Cache Control and Last-Modified with Go"
+              slug="understanding-http-304-etag-cache-control-and-last-modified-with-go"
+              image="https://furkanbaytekin.dev/_next/image?url=http%3A%2Fdebian%3A2998%2Fuploads%2Fcovers%2Funderstanding-http-304-etag-cache-control-and-last-modified-with-go%2B1747381821486.webp&w=384&q=75"
+              publishedAt="2024-05-17"
+              createdAt="2024-05-16"
+              category="Software"
+              views="100"
+              readTime="5 min"
+            ></blog-card>
 
-        <blog-list
-          data='[
-          {
-            "title": "How I Know You Read This, This is a too long title to fit in the column",
-            "slug": "how-i-know-you-read-this",
-            "image": "https://fastly.picsum.photos/id/779/320/180.jpg?hmac=Rgiqta9nL90xkpeLeK-Mwd0R45YjWCHqBviRd1Q2v2Q",
-            "publishedAt": "2024-05-17",
-            "createdAt": "2024-05-17",
-            "readTime": 12,
-            "views": 1253,
-            "category": "Backend",
-            "published": true,
-            "status": "Published"
-          },
-          {
-            "title": "Why I Hate Tailwind CSS",
-            "slug": "why-i-hate-tailwind-css",
-            "image":"https://fastly.picsum.photos/id/779/320/180.jpg?hmac=Rgiqta9nL90xkpeLeK-Mwd0R45YjWCHqBviRd1Q2v2Q",
-            "createdAt": "2024-05-16",
-            "readTime": "13",
-            "views": "1243",
-            "category": "Frontend",
-            "published": false,
-            "status": "Draft"
-          },
-          {
-            "title": "I don&apos;t like React.js",
-            "slug": "i-dont-like-react-js",
-            "image": "https://fastly.picsum.photos/id/779/320/180.jpg?hmac=Rgiqta9nL90xkpeLeK-Mwd0R45YjWCHqBviRd1Q2v2Q",
-            "createdAt": "2024-05-15",
-            "readTime": "10",
-            "views": "1123",
-            "category": "Frontend",
-            "published": false,
-            "status": "Draft"
-          }
-        ]'
-        ></blog-list>
-      </section>
+            <blog-card
+              title="HTTP Redirects: 301, 302, 307, 308 Explained"
+              slug="http-redirects-301-302-307-308-explained"
+              image="https://furkanbaytekin.dev/_next/image?url=http%3A%2Fdebian%3A2998%2Fuploads%2Fcovers%2Fhttp-redirects-301-302-307-308-explained%2B1747298113731.webp&w=384&q=75"
+              publishedAt="2024-05-17"
+              createdAt="2024-05-16"
+              category="Software"
+              views="100"
+              readTime="5 min"
+            ></blog-card>
+
+            <blog-card
+              title="Why CORS Exists: A Brief History of Cross-Origin Policies"
+              slug="why-cors-exists-a-brief-history-of-cross-origin-policies"
+              image="https://furkanbaytekin.dev/_next/image?url=http%3A%2Fdebian%3A2998%2Fuploads%2Fcovers%2Fwhy-does-cors-exist-a-brief-history-of-cross-origin-policies%2B1747206260941.webp&w=384&q=75"
+              publishedAt="2024-05-17"
+              createdAt="2024-05-16"
+              category="Software"
+              views="100"
+              readTime="5 min"
+            ></blog-card>
+
+            <blog-card
+              title="Orhan Sefik Celik - Turkish Delight: One Man Band"
+              slug="orhan-sefik-celik-turkish-delight-one-man-band"
+              image="https://furkanbaytekin.dev/_next/image?url=http%3A%2Fdebian%3A2998%2Fuploads%2Fcovers%2Fturkish-delight-orhan-seyfi-celiks-one-man-band%2B1740321862050.webp&w=640&q=75"
+              publishedAt="2024-05-17"
+              createdAt="2024-05-16"
+              category="Software"
+              views="100"
+              readTime="5 min"
+            ></blog-card>
+          </div>
+        </section>
+
+        <section>
+          <h3>Filters</h3>
+
+          <form>
+            <fieldset>
+              <legend>Search Term</legend>
+
+              <label>
+                <input type="search" name="search" />
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Category</legend>
+
+              <label>
+                <input type="checkbox" value="All" />
+                <span>All</span>
+              </label>
+
+              <label>
+                <input type="checkbox" value="Software" />
+                <span>Software</span>
+              </label>
+
+              <label>
+                <input type="checkbox" value="Hardware" />
+                <span>Hardware</span>
+              </label>
+
+              <label>
+                <input type="checkbox" value="Science" />
+                <span>Science</span>
+              </label>
+
+              <label>
+                <input type="checkbox" value="Technology" />
+                <span>Technology</span>
+              </label>
+
+              <label>
+                <input type="checkbox" value="Other" />
+                <span>Other</span>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Status</legend>
+
+              <label>
+                <input type="checkbox" checked name="published" />
+                <span>Published</span>
+              </label>
+
+              <label>
+                <input type="checkbox" name="draft" />
+                <span>Draft</span>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Sort By</legend>
+
+              <label>
+                <input type="radio" name="sort" value="newest" checked />
+                <span>Newest</span>
+              </label>
+
+              <label>
+                <input type="radio" name="sort" value="oldest" />
+                <span>Oldest</span>
+              </label>
+
+              <label>
+                <input type="radio" name="sort" value="popular" />
+                <span>Most Popular</span>
+              </label>
+
+              <label>
+                <input type="radio" name="sort" value="unpopular" />
+                <span>Least Popular</span>
+              </label>
+
+              <label>
+                <input type="radio" name="sort" value="longest" />
+                <span>Longest</span>
+              </label>
+
+              <label>
+                <input type="radio" name="sort" value="shortest" />
+                <span>Shortest</span>
+              </label>
+            </fieldset>
+          </form>
+        </section>
+      </div>
 
       <footer>
         <p>

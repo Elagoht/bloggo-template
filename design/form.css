@@ -1,36 +1,43 @@
+main form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 button {
   padding: 0.5rem;
   border-radius: 0.25rem;
   border: none;
-  background-color: var(--gopher-500);
-  color: var(--gopher-50);
+  background-color: var(--smoke-500);
+  color: var(--smoke-50);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 
 button:hover {
-  background-color: var(--gopher-600);
+  background-color: var(--smoke-600);
 }
 
 button:active {
   outline: none;
-  background-color: var(--gopher-700);
-  box-shadow: 0 0 0 0.125rem var(--gopher-500);
+  background-color: var(--smoke-700);
+  box-shadow: 0 0 0 0.125rem var(--smoke-500);
 }
 
-input {
+input,
+select {
   height: 2rem;
   padding: 0.5rem;
   border-radius: 0.25rem;
   border: none;
-  background-color: var(--gopher-200);
-  color: var(--gopher-950);
+  background-color: var(--smoke-200);
+  color: var(--smoke-950);
   transition: all 0.2s ease-in-out;
 }
 
 input:focus {
   outline: none;
-  box-shadow: 0 0 0 0.125rem var(--gopher-500);
+  box-shadow: 0 0 0 0.125rem var(--smoke-500);
 }
 
 button:focus,
@@ -39,5 +46,88 @@ select:focus,
 textarea:focus {
   outline: none;
   z-index: 1;
-  box-shadow: 0 0 0 0.125rem var(--gopher-500);
+  box-shadow: 0 0 0 0.125rem var(--smoke-500);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1rem;
+  height: 1rem;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--gopher-500);
+}
+
+input[type="checkbox"]::after {
+  content: "";
+  display: block;
+  border-bottom: 0.125rem solid var(--smoke-50);
+  border-left: 0.125rem solid var(--smoke-50);
+  position: absolute;
+  top: 0.5rem;
+  left: 0.125rem;
+  right: 0.125rem;
+  bottom: 0.125rem;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  transform-origin: top left;
+  transform: rotate(-90deg);
+}
+
+input[type="checkbox"]:checked::after {
+  opacity: 1;
+  transform: rotate(-45deg);
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="radio"]:checked {
+  box-shadow: 0 0 0 0.125rem var(--smoke-200) inset,
+    0 0 0 1rem var(--gopher-500) inset;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  user-select: none;
+}
+
+label:has(input[type="checkbox"]),
+label:has(input[type="radio"]) {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+fieldset {
+  border: none;
+  border-bottom: 0.0625rem solid var(--smoke-200);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+fieldset:last-child {
+  border-bottom: none;
+}
+
+legend {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--smoke-500);
+}
+
+@media (prefers-color-scheme: dark) {
+  fieldset {
+    border-color: var(--smoke-700);
+  }
 }

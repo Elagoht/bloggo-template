@@ -20,8 +20,14 @@ class Icon extends HTMLElement {
   connectedCallback() {
     this.attachShadow({ mode: "open" });
 
+    this.style.display = "inline-block";
+    this.style.verticalAlign = "middle";
+
+    this.style.width = this.getAttribute("width") || "1rem";
+    this.style.height = this.getAttribute("height") || "1rem";
+
     this.shadowRoot.innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
         <path d="${this.iconPath}" />
       </svg>
     `;
