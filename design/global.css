@@ -1,0 +1,64 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+  --gopher-50: #f4f7fa;
+  --gopher-100: #e6ecf3;
+  --gopher-200: #d4dde9;
+  --gopher-300: #a7bcd3;
+  --gopher-400: #92aac8;
+  --gopher-500: #7891b9;
+  --gopher-600: #667baa;
+  --gopher-700: #5a6b9b;
+  --gopher-800: #4d5980;
+  --gopher-900: #414b67;
+  --gopher-950: #2b3040;
+
+  --smoke-0: #f9f9f9;
+  --smoke-50: #f6f6f6;
+  --smoke-100: #e7e7e7;
+  --smoke-200: #d1d1d1;
+  --smoke-300: #b0b0b0;
+  --smoke-400: #888888;
+  --smoke-500: #6d6d6d;
+  --smoke-600: #5d5d5d;
+  --smoke-700: #4f4f4f;
+  --smoke-800: #454545;
+  --smoke-900: #3d3d3d;
+  --smoke-950: #1b1b1b;
+  --smoke-1000: #0a0a0a;
+}
+
+/* Global Styles */
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  background-color: var(--smoke-100);
+  color: var(--gopher-950);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--smoke-1000);
+    color: var(--smoke-50);
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}

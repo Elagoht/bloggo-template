@@ -1,0 +1,43 @@
+button {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: var(--gopher-500);
+  color: var(--gopher-50);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--gopher-600);
+}
+
+button:active {
+  outline: none;
+  background-color: var(--gopher-700);
+  box-shadow: 0 0 0 0.125rem var(--gopher-500);
+}
+
+input {
+  height: 2rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: var(--gopher-200);
+  color: var(--gopher-950);
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.125rem var(--gopher-500);
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  z-index: 1;
+  box-shadow: 0 0 0 0.125rem var(--gopher-500);
+}
