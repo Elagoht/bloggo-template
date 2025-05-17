@@ -20,6 +20,9 @@ class BlogList extends HTMLElement {
           display: flex;
           flex-direction: column;
           min-width: 48rem;
+          background: var(--smoke-50);
+          border-radius: 0.5rem;
+          overflow: hidden;
         }
 
         .header, .row {
@@ -28,7 +31,6 @@ class BlogList extends HTMLElement {
           align-items: center;
           gap: 1rem;
           padding: 0.75rem;
-          border-radius: 0.5rem;
         }
 
         .header div {
@@ -40,8 +42,8 @@ class BlogList extends HTMLElement {
         }
 
         .header {
+          background: white;
           font-weight: bold;
-          background: var(--smoke-0);
         }
 
         .row {
@@ -49,7 +51,7 @@ class BlogList extends HTMLElement {
         }
 
         .row:hover {
-          background: var(--smoke-50);
+          background: var(--smoke-0);
         }
 
         .row {
@@ -101,14 +103,14 @@ class BlogList extends HTMLElement {
         }
 
         @media (prefers-color-scheme: dark) {
-          .header {
+          .container {
             background: var(--smoke-950);
           }
-          .row {
-            border-top-color: var(--smoke-800);
+          .header {
+            background: var(--smoke-900);
           }
           .row:hover {
-            background: var(--smoke-900);
+            background: var(--smoke-800);
           }
         }
       </style>
