@@ -19,6 +19,7 @@
     <script src="components/icons.js"></script>
     <!-- Behaviour -->
     <script src="behaviour/aside.js" defer></script>
+    <script src="behaviour/cover-art-preview.js" defer></script>
   </head>
 
   <body class="aside-open">
@@ -65,6 +66,79 @@
     </aside>
 
     <main>
+      <h2>Write A New Blog</h2>
+
+      <form id="write-form">
+        <section>
+          <fieldset>
+            <legend>Content</legend>
+
+            <label>
+              <span>Title</span>
+              <input type="text" name="title" />
+            </label>
+
+            <label>
+              <span>Content</span>
+              <small>Supports Markdown and HTML</small>
+              <textarea name="content"></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>SEO</legend>
+            <label>
+              <span>Description</span>
+              <input type="text" name="description" />
+            </label>
+
+            <label>
+              <span>Keywords</span>
+              <input type="text" name="keywords" />
+            </label>
+
+            <label>
+              <span>Spot Text</span>
+              <input type="text" name="spot" />
+            </label>
+          </fieldset>
+        </section>
+
+        <section>
+          <fieldset>
+            <legend>Status</legend>
+
+            <label>
+              <input type="checkbox" switch name="published" /> Published
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Metadata</legend>
+
+            <label>
+              <span>Category</span>
+
+              <select name="category">
+                <option value="1">Category 1</option>
+                <option value="2">Category 2</option>
+                <option value="3">Category 3</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Cover Art</span>
+              <input type="file" accept="image/*" />
+            </label>
+
+            <label>
+              <span>Preview</span>
+              <img id="cover-art" alt="Cover Art" />
+            </label>
+          </fieldset>
+        </section>
+      </form>
+
       <footer>
         <p>
           Made with <a href="https://wikipedia.org/wiki/love">🩷</a> and

@@ -57,7 +57,7 @@ textarea:focus {
   box-shadow: 0 0 0 0.125rem var(--smoke-500);
 }
 
-input[type="checkbox"],
+input[type="checkbox"]:not([switch]),
 input[type="radio"] {
   width: 1rem;
   height: 1rem;
@@ -66,11 +66,11 @@ input[type="radio"] {
   position: relative;
 }
 
-input[type="checkbox"]:checked {
+input[type="checkbox"]:not([switch]):checked {
   background-color: var(--gopher-500);
 }
 
-input[type="checkbox"]::after {
+input[type="checkbox"]:not([switch])::after {
   content: "";
   display: block;
   border-bottom: 0.125rem solid var(--smoke-50);
@@ -86,7 +86,7 @@ input[type="checkbox"]::after {
   transform: rotate(-90deg);
 }
 
-input[type="checkbox"]:checked::after {
+input[type="checkbox"]:not([switch]):checked::after {
   opacity: 1;
   transform: rotate(-45deg);
 }
@@ -134,8 +134,82 @@ legend {
   color: var(--smoke-500);
 }
 
+textarea {
+  height: 10rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: var(--smoke-200);
+}
+
+label small {
+  font-size: 0.75rem;
+  margin-top: -0.5rem;
+  color: var(--smoke-500);
+}
+
+input[type="file"] {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  padding: 0.4rem;
+  max-width: 100%;
+}
+
+input[type="checkbox"][switch] {
+  appearance: none;
+  width: 2.5rem;
+  height: 1.25rem;
+  border-radius: 1rem;
+  background-color: var(--smoke-200);
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="checkbox"][switch]::before {
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--gopher-500);
+  position: absolute;
+  top: 0.125rem;
+  left: 0.125rem;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="checkbox"][switch]:checked {
+  background-color: var(--gopher-500);
+}
+
+input[type="checkbox"][switch]:checked::before {
+  left: calc(100% - 1.125rem);
+  background-color: var(--smoke-200);
+}
+
 @media (prefers-color-scheme: dark) {
   fieldset {
     border-color: var(--smoke-700);
+  }
+
+  textarea,
+  input,
+  select {
+    background-color: var(--smoke-800);
+    color: var(--smoke-50);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--smoke-500);
+  }
+
+  input[type="checkbox"][switch] {
+    background-color: var(--smoke-700);
+  }
+
+  input[type="checkbox"][switch]:checked::before {
+    background-color: var(--smoke-700);
   }
 }
