@@ -24,6 +24,14 @@ button:active {
   box-shadow: 0 0 0 0.125rem var(--smoke-500);
 }
 
+main button[type="submit"] {
+  background-color: var(--gopher-500);
+}
+
+main sbutton[type="submit"]:hover {
+  background-color: var(--gopher-600);
+}
+
 input,
 select {
   height: 2rem;
