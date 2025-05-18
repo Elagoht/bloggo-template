@@ -27,6 +27,7 @@ export class BlogCard extends HTMLElement {
           text-decoration: none;
           color: inherit;
           transition: all 0.2s ease-in-out;
+          height: 100%;
         }
 
         figure {
@@ -83,6 +84,7 @@ export class BlogCard extends HTMLElement {
         }
 
         div:has(time) {
+          margin-top: auto;
           display: flex;
           justify-content: space-between;
           align-items: center;
