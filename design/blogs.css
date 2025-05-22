@@ -10,6 +10,25 @@ section {
   gap: 1rem;
 }
 
+hgroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main hgroup a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--smoke-500);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--smoke-50);
+}
+
 #container {
   display: grid;
   grid-template-columns: 1fr 16rem;
@@ -33,5 +52,12 @@ section {
 
   #container > section:has(form) {
     position: unset;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  main hgroup a {
+    background-color: var(--smoke-900);
+    color: var(--smoke-50);
   }
 }
