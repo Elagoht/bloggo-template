@@ -32,6 +32,30 @@
   --smoke-900: #3d3d3d;
   --smoke-950: #1b1b1b;
   --smoke-1000: #0a0a0a;
+
+  --success-50: #effeef;
+  --success-100: #dafedb;
+  --success-200: #b6fcba;
+  --success-300: #7ef786;
+  --success-400: #2ce738;
+  --success-500: #16d123;
+  --success-600: #0bae16;
+  --success-700: #0d8816;
+  --success-800: #106b18;
+  --success-900: #0f5816;
+  --success-950: #023107;
+
+  --danger-50: #ffeef0;
+  --danger-100: #fedbda;
+  --danger-200: #fbaeba;
+  --danger-300: #f78686;
+  --danger-400: #e73838;
+  --danger-500: #d12323;
+  --danger-600: #ae1616;
+  --danger-700: #881616;
+  --danger-800: #6b1818;
+  --danger-900: #581616;
+  --danger-950: #310707;
 }
 
 /* Global Styles */

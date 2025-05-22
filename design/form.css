@@ -174,7 +174,7 @@ input[type="checkbox"][switch]::before {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background-color: var(--gopher-500);
+  background-color: var(--smoke-500);
   position: absolute;
   top: 0.125rem;
   left: 0.125rem;
@@ -182,12 +182,12 @@ input[type="checkbox"][switch]::before {
 }
 
 input[type="checkbox"][switch]:checked {
-  background-color: var(--gopher-500);
+  background-color: var(--success-500);
 }
 
 input[type="checkbox"][switch]:checked::before {
   left: calc(100% - 1.125rem);
-  background-color: var(--smoke-200);
+  background-color: var(--smoke-50);
 }
 
 @media (prefers-color-scheme: dark) {
