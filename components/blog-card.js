@@ -1,17 +1,36 @@
 export class BlogCard extends HTMLElement {
+  static get observedAttributes() {
+    return ["title", "slug", "image", "published-at", "created-at", "category", "read-time", "preview", "views"];
+  }
+
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-    this.title = this.getAttribute("title");
-    this.slug = this.getAttribute("slug");
-    this.image = this.getAttribute("image");
-    this.publishedAt = this.getAttribute("publishedAt");
-    this.createdAt = this.getAttribute("createdAt");
-    this.category = this.getAttribute("category");
-    this.views = this.getAttribute("views");
-    this.readTime = this.getAttribute("readTime");
+    this.render();
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    this.render();
+  }
+
+  getPreviewValue() {
+    const value = this.getAttribute("preview");
+    return value === "" || value === "true";
+  }
+
+  render() {
+    const preview = this.getPreviewValue();
+    const title = this.getAttribute("title") ?? "";
+    const slug = this.getAttribute("slug") ?? "";
+    const image = this.getAttribute("image") ?? "";
+    const publishedAt = this.getAttribute("published-at");
+    const createdAt = this.getAttribute("created-at");
+    const category = this.getAttribute("category") ?? "";
+    const views = this.getAttribute("views") ?? "";
+    const readTime = this.getAttribute("read-time") ?? "";
 
     function formatDate(date) {
+      if (!date) return "";
       const options = { year: "numeric", month: "long", day: "numeric" };
       return new Date(date).toLocaleDateString("en-US", options);
     }
@@ -20,6 +39,8 @@ export class BlogCard extends HTMLElement {
       <style>
         a {
           display: flex;
+          word-break: break-word;
+          overflow-wrap: break-word;
           flex-direction: column;
           overflow: hidden;
           border-radius: 0.5rem;
@@ -90,6 +111,10 @@ export class BlogCard extends HTMLElement {
           align-items: center;
         }
 
+        strong {
+          word-break: break-word;
+        }
+
         a:hover img {
           transform: scale(1.05);
         }
@@ -102,23 +127,23 @@ export class BlogCard extends HTMLElement {
         }
       </style>
 
-      <a href="/blogs/edit/${this.slug}">
+      <a href="${preview ? "#" : `/blogs/edit/${slug}`}">
         <figure>
-          <img src="${this.image}" alt="${this.title}" />
+          <img src="${image}" alt="${title}" />
 
-          <figcaption>${this.category}</figcaption>
+          <figcaption>${category}</figcaption>
 
-          <span><icon-eye></icon-eye>${this.views}</span>
+          <span><icon-eye></icon-eye>${views}</span>
         </figure>
 
         <div>
-          <strong>${this.title}</strong>
+          <strong>${title}</strong>
         </div>
 
         <div>
-          <time>${formatDate(this.publishedAt || this.createdAt)}</time>
+          <time>${formatDate(publishedAt ?? createdAt)}</time>
 
-          <time>${this.readTime}</time>
+          <time>${readTime}</time>
         </div>
       </a>
     `;

@@ -17,9 +17,10 @@
     <link rel="stylesheet" href="design/write.css" />
     <!-- Components -->
     <script src="components/icons.js"></script>
+    <script src="components/blog-card.js" type="module"></script>
     <!-- Behaviour -->
     <script src="behaviour/aside.js" defer></script>
-    <script src="behaviour/cover-art-preview.js" defer></script>
+    <script src="behaviour/blog-card-preview.js" defer></script>
   </head>
 
   <body class="aside-open">
@@ -128,13 +129,14 @@
 
             <label>
               <span>Cover Art</span>
-              <input type="file" accept="image/*" />
+              <input type="file" name="image" accept="image/*" />
             </label>
 
-            <label>
-              <span>Preview</span>
-              <img id="cover-art" alt="Cover Art" />
-            </label>
+            <fieldset>
+              <legend>Preview</legend>
+
+              <blog-card id="blog-card"></blog-card>
+            </fieldset>
           </fieldset>
         </section>
       </form>

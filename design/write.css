@@ -10,9 +10,21 @@ section {
   gap: 1rem;
 }
 
+form section:first-child {
+  background-color: var(--smoke-50);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+h2 {
+  max-width: 80rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
 #write-form {
   display: grid;
-  grid-template-columns: 1fr 24rem;
+  grid-template-columns: 1fr 20rem;
   gap: 1rem;
   align-items: start;
   width: 100%;
@@ -25,42 +37,10 @@ section {
   top: 0rem;
 }
 
-#cover-art {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  border: 1px solid var(--smoke-300);
-  color: transparent;
-  background-image: linear-gradient(
-    to top left,
-    var(--smoke-300),
-    var(--smoke-100)
-  );
-}
-
-img:not([src]) {
-  position: relative;
-}
-
-img:not([src])::after {
-  content: "No cover art";
-  color: var(--smoke-500);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
 @media (max-width: 1024px) {
   #write-form {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   #write-form > section:has(form) {
@@ -69,12 +49,7 @@ img:not([src])::after {
 }
 
 @media (prefers-color-scheme: dark) {
-  #cover-art {
-    border-color: var(--smoke-700);
-    background-image: linear-gradient(
-      to top left,
-      var(--smoke-950),
-      var(--smoke-900)
-    );
+  form section:first-child {
+    background-color: var(--smoke-950);
   }
 }

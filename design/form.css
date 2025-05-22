@@ -37,6 +37,7 @@ select {
   height: 2rem;
   padding: 0.5rem;
   border-radius: 0.25rem;
+  font-size: 0.875rem;
   border: none;
   background-color: var(--smoke-200);
   color: var(--smoke-950);
@@ -135,6 +136,7 @@ legend {
 }
 
 textarea {
+  font-family: inherit;
   height: 10rem;
   padding: 0.5rem;
   border-radius: 0.25rem;
