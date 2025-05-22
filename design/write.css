@@ -13,6 +13,7 @@ section {
 form section:first-child fieldset {
   background-color: var(--smoke-50);
   border-radius: 0.5rem;
+  border-bottom: 0.0625rem solid var(--smoke-200);
   padding: 1rem;
 }
 
@@ -51,5 +52,9 @@ h2 {
 @media (prefers-color-scheme: dark) {
   form section:first-child fieldset {
     background-color: var(--smoke-950);
+  }
+
+  form section:first-child fieldset {
+    border-bottom: 0.0625rem solid var(--smoke-700);
   }
 }
