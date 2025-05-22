@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categories - Bloggo</title>
+    <link rel="stylesheet" href="design/global.css" />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Specific Styles -->
+    <link rel="stylesheet" href="design/panel.css" />
+    <link rel="stylesheet" href="design/form.css" />
+    <link rel="stylesheet" href="design/blogs.css" />
+    <!-- Components -->
+    <script src="components/icons.js" type="module"></script>
+    <script src="components/category-card.js" type="module"></script>
+    <!-- Behaviour -->
+    <script src="behaviour/aside.js" defer></script>
+  </head>
+
+  <body class="aside-open">
+    <header>
+      <button type="button"><icon-menu></icon-menu></button>
+
+      <hgroup>
+        <a href="/dashboard.html">
+          <img
+            src="assets/bloggo.webp"
+            width="48"
+            height="48"
+            alt="Bloggo Logo"
+          />
+
+          <h1>Bloggo</h1>
+        </a>
+      </hgroup>
+
+      <form action="/api/search" method="GET">
+        <input type="search" placeholder="Search Blogs" />
+
+        <button type="submit"><icon-search></icon-search></button>
+      </form>
+
+      <form action="/api/auth/logout" method="POST">
+        <button type="submit"><icon-logout></icon-logout></button>
+      </form>
+    </header>
+
+    <aside>
+      <nav>
+        <a href="/dashboard.html">
+          <icon-dashboard></icon-dashboard> Dashboard
+        </a>
+        <a href="/write.html"><icon-write></icon-write> Write</a>
+        <a href="/blogs.html"><icon-blog></icon-blog> Blogs</a>
+        <a href="/categories.html" id="active">
+          <icon-category></icon-category> Categories
+        </a>
+        <a href="/api.html"><icon-api></icon-api> API Model</a>
+        <a href="/webhooks.html"><icon-webhook></icon-webhook> Webhooks</a>
+      </nav>
+    </aside>
+
+    <main>
+      <div id="container">
+        <section>
+          <hgroup>
+            <h3>Categories</h3>
+
+            <a href="/write.html"><icon-plus></icon-plus> New Category</a>
+          </hgroup>
+
+          <div id="blog-card-list">
+            <category-card
+              title="Software"
+              slug="software"
+              spot="Backend, Frontend, DevOps, AI, and more"
+              blogs="134"
+            ></category-card>
+
+            <category-card
+              title="Vacation"
+              slug="vacation"
+              spot="Travel, holidays, and more"
+              blogs="3"
+            ></category-card>
+
+            <category-card
+              title="Music"
+              slug="music"
+              spot="Music, concerts, instruments, and more"
+              blogs="24"
+            ></category-card>
+
+            <category-card
+              title="Food"
+              slug="food"
+              spot="Food, recipes, and more"
+              blogs="13"
+            ></category-card>
+          </div>
+        </section>
+
+        <section>
+          <h3>Filters</h3>
+
+          <form>
+            <label>
+              <input placeholder="Search Blogs" type="search" name="search" />
+            </label>
+
+            <fieldset>
+              <legend>Sort By</legend>
+
+              <label>
+                <input type="radio" name="sort" value="newest" checked />
+                <span>Newest</span>
+              </label>
+
+              <label>
+                <input type="radio" name="sort" value="oldest" />
+                <span>Oldest</span>
+              </label>
+
+              <label>
+                <input type="radio" name="sort" value="popular" />
+                <span>Most Popular</span>
+              </label>
+
+              <label>
+                <input type="radio" name="sort" value="unpopular" />
+                <span>Least Popular</span>
+              </label>
+
+              <label>
+                <input type="radio" name="sort" value="max-blogs" />
+                <span>Most Blogs</span>
+              </label>
+
+              <label>
+                <input type="radio" name="sort" value="min-blogs" />
+                <span>Least Blogs</span>
+              </label>
+            </fieldset>
+
+            <button type="reset"><icon-clear></icon-clear> Reset</button>
+
+            <button type="submit"><icon-search></icon-search> Apply</button>
+          </form>
+        </section>
+      </div>
+
+      <footer>
+        <p>
+          Made with <a href="https://wikipedia.org/wiki/love">🩷</a> and
+          <a href="https://go.dev">Go</a>
+          by <a href="https://github.com/Elagoht">Elagoht</a>
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
