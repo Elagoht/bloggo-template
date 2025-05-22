@@ -41,7 +41,7 @@ h2 {
   width: 100%;
 }
 
-#write-form {
+main form {
   display: grid;
   grid-template-columns: 1fr 20rem;
   gap: 1rem;
@@ -51,18 +51,18 @@ h2 {
   margin: 0 auto;
 }
 
-#write-form > section:has(form) {
+main form > section:has(form) {
   position: sticky;
   top: 0rem;
 }
 
 @media (max-width: 1024px) {
-  #write-form {
+  main form {
     display: flex;
     flex-direction: column;
   }
 
-  #write-form > section:has(form) {
+  main form > section:has(form) {
     position: unset;
   }
 }
