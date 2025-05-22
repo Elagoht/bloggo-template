@@ -17,6 +17,24 @@ form section:first-child fieldset {
   padding: 1rem;
 }
 
+section:nth-child(2) fieldset > div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.25rem;
+}
+
+section:nth-child(2) fieldset > div strong {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--smoke-500);
+}
+
+section:nth-child(2) fieldset > div time {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--smoke-300);
+}
+
 h2 {
   max-width: 80rem;
   margin: 0 auto;
