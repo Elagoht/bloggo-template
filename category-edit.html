@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Category - Bloggo</title>
+    <link rel="stylesheet" href="design/global.css" />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Specific Styles -->
+    <link rel="stylesheet" href="design/panel.css" />
+    <link rel="stylesheet" href="design/form.css" />
+    <link rel="stylesheet" href="design/category-write.css" />
+    <!-- Components -->
+    <script src="components/icons.js"></script>
+    <script src="components/category-card.js" type="module"></script>
+    <!-- Behaviour -->
+    <script src="behaviour/aside.js" defer></script>
+    <script src="behaviour/category-card-preview.js" defer></script>
+  </head>
+
+  <body class="aside-open">
+    <header>
+      <button type="button"><icon-menu></icon-menu></button>
+
+      <hgroup>
+        <a href="/dashboard.html">
+          <img
+            src="assets/bloggo.webp"
+            width="48"
+            height="48"
+            alt="Bloggo Logo"
+          />
+
+          <h1>Bloggo</h1>
+        </a>
+      </hgroup>
+
+      <form action="/api/search" method="GET">
+        <input type="search" placeholder="Search Blogs" />
+
+        <button type="submit"><icon-search></icon-search></button>
+      </form>
+
+      <form action="/api/auth/logout" method="POST">
+        <button type="submit"><icon-logout></icon-logout></button>
+      </form>
+    </header>
+
+    <aside>
+      <nav>
+        <a href="/dashboard.html">
+          <icon-dashboard></icon-dashboard> Dashboard
+        </a>
+        <a href="/write.html" id="active"><icon-write></icon-write> Write</a>
+        <a href="/blogs.html"><icon-blog></icon-blog> Blogs</a>
+        <a href="/categories.html">
+          <icon-category></icon-category> Categories
+        </a>
+        <a href="/api.html"><icon-api></icon-api> API Model</a>
+        <a href="/webhooks.html"><icon-webhook></icon-webhook> Webhooks</a>
+      </nav>
+    </aside>
+
+    <main>
+      <h2>Write A New Category</h2>
+
+      <form>
+        <section>
+          <fieldset>
+            <legend>Content</legend>
+
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" />
+            </label>
+
+            <label>
+              <span>Spot Text</span>
+              <input type="text" name="spot" />
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>SEO</legend>
+
+            <label>
+              <span>Keywords</span>
+              <input type="text" name="keywords" />
+            </label>
+
+            <label>
+              <span>Description</span>
+              <input type="text" name="description" />
+            </label>
+          </fieldset>
+        </section>
+
+        <section>
+          <span>Preview</span>
+
+          <category-card id="category-card"></category-card>
+
+          <div>
+            <strong>Created At</strong>
+            <time datetime="2025-05-23T12:00:00Z">2025-05-23</time>
+          </div>
+
+          <div>
+            <strong>Updated At</strong>
+            <time datetime="2025-05-23T12:00:00Z">2025-05-23</time>
+          </div>
+
+          <button type="submit"><icon-save></icon-save> Save</button>
+        </section>
+      </form>
+
+      <footer>
+        <p>
+          Made with <a href="https://wikipedia.org/wiki/love">🩷</a> and
+          <a href="https://go.dev">Go</a>
+          by <a href="https://github.com/Elagoht">Elagoht</a>
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
