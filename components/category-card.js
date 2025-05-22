@@ -1,6 +1,6 @@
 export class CategoryCard extends HTMLElement {
   static get observedAttributes() {
-    return ["title", "slug", "spot", "blogs"];
+    return ["name", "slug", "spot", "blogs"];
   }
 
   constructor() {
@@ -14,7 +14,7 @@ export class CategoryCard extends HTMLElement {
   }
 
   render() {
-    const title = this.getAttribute("title") ?? "";
+    const name = this.getAttribute("name") ?? "";
     const slug = this.getAttribute("slug") ?? "";
     const spot = this.getAttribute("spot") ?? "";
     const blogs = this.getAttribute("blogs") ?? "";
@@ -78,7 +78,7 @@ export class CategoryCard extends HTMLElement {
 
       <a href="${preview ? "#" : `/categories/edit/${slug}`}">
         <div>
-          <strong>${title}</strong>
+          <strong>${name}</strong>
 
           <span>${blogs}</span>
         </div>
