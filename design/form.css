@@ -214,4 +214,9 @@ input[type="checkbox"][switch]:checked::before {
   input[type="checkbox"][switch]:checked::before {
     background-color: var(--smoke-700);
   }
+
+  input[type="radio"]:checked {
+    box-shadow: 0 0 0 0.125rem var(--smoke-700) inset,
+    0 0 0 1rem var(--gopher-500) inset;
+  }
 }
