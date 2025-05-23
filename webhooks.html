@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>Category - Bloggo</title>
+    <title>Webhooks - Bloggo</title>
     <link rel="stylesheet" href="design/global.css" />
     <link rel="icon" href="assets/favicon.ico" />
     <link
@@ -16,14 +16,12 @@
 
     <!-- Specific Styles -->
     <link rel="stylesheet" href="design/panel.css" />
-    <link rel="stylesheet" href="design/form.css" />
-    <link rel="stylesheet" href="design/category-write.css" />
+    <link rel="stylesheet" href="design/webhooks.css" />
     <!-- Components -->
     <script src="components/icons.js"></script>
-    <script src="components/category-card.js" type="module"></script>
+    <script src="components/webhook-card.js" type="module"></script>
     <!-- Behaviour -->
     <script src="behaviour/aside.js" defer></script>
-    <script src="behaviour/category-card-preview.js" defer></script>
   </head>
 
   <body class="aside-open">
@@ -59,58 +57,35 @@
         <a href="/dashboard.html">
           <icon-dashboard></icon-dashboard> Dashboard
         </a>
-        <a href="/write.html" id="active"><icon-write></icon-write> Write</a>
+        <a href="/write.html"><icon-write></icon-write> Write</a>
         <a href="/blogs.html"><icon-blog></icon-blog> Blogs</a>
         <a href="/categories.html">
           <icon-category></icon-category> Categories
         </a>
         <a href="/api.html"><icon-api></icon-api> API Model</a>
-        <a href="/webhooks.html"><icon-webhook></icon-webhook> Webhooks</a>
+        <a href="/webhooks.html" id="active">
+          <icon-webhook></icon-webhook> Webhooks
+        </a>
       </nav>
     </aside>
 
     <main>
-      <h2>Write A New Category</h2>
+      <section>
+        <h2>Webhooks</h2>
 
-      <form>
-        <section>
-          <fieldset>
-            <legend>Content</legend>
-
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" />
-            </label>
-
-            <label>
-              <span>Spot Text</span>
-              <input type="text" name="spot" />
-            </label>
-          </fieldset>
-
-          <fieldset>
-            <legend>SEO</legend>
-
-            <label>
-              <span>Keywords</span>
-              <input type="text" name="keywords" />
-            </label>
-
-            <label>
-              <span>Description</span>
-              <input type="text" name="description" />
-            </label>
-          </fieldset>
-        </section>
-
-        <section>
-          <span>Preview</span>
-
-          <category-card preview="true" id="category-card"></category-card>
-
-          <button type="submit"><icon-save></icon-save> Save</button>
-        </section>
-      </form>
+        <webhook-card
+          action="Update Blogs"
+          description="Update blogs when they are created, updated or deleted"
+          secret=":D"
+          url="http://debian:3000/api/webhook"
+          method="PATCH"
+          headers='{
+            "User-Agent": "ownBlog-1.0-self-hosted-blog-cms",
+            "X-Webhook-Secret": ":D",
+            "X-Webhook-Action": "blogs"
+          }'
+        ></webhook-card>
+      </section>
 
       <footer>
         <p>
